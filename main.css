@@ -1,0 +1,78 @@
+body,html {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+    height: 100%;
+}
+
+.banner-divider {
+    position: relative;
+    background: #497b40;
+    height: 40px;
+}
+
+
+/*blank template
+
+.banner-divider-blank {
+    position: relative;
+    background: none;
+    height: 40px;
+}
+
+*/
+
+.content {
+    width: 960px;
+    margin: 0px auto;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);
+}
+
+.inner-content {
+    padding: 0px 20px 40px 20px;
+}
+
+DT {
+    font-weight: bold;
+    margin-top: .33em;
+    margin-left: 2.5em;
+}
+
+H1 {
+    color: #000;
+    margin-left: 0em;
+}
+
+H2 {
+    color: #000;
+    margin-left: 0em;
+    margin-top: 1.33em;
+}
+
+
+H3 {
+    color: #000;
+    margin-left: 1em;
+}
+
+p {
+    margin-left: 2.5em;
+}
+
+
+/*//////////////////////////////////////////////////////*/
+.parallax {
+  /* The image used */
+  background-image: url("images/1.jpg");
+
+  /* Full height */
+  height: 90%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
