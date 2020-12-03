@@ -35,6 +35,116 @@ html {
     padding: 0px 20px 40px 20px;
 }
 
+
+.Logo {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    margin-left: -105px
+}
+
+.game_title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    color: #fff;
+    -webkit-text-stroke: 1px black;
+}
+
+.game_descr {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    color: #fff;
+    -webkit-text-stroke: 1px black;
+}
+
+.text_fade_in {
+    animation: opac 3.8s
+}
+
+@keyframes opac {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/*//////////////////////////////////////////////////////*/
+.parallax {
+    /* The image used */
+    background-image: url("images/3.png");
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* NOTE: Button */
+/*//////////////////////////////////////////////////////*/
+.dl_button {
+    left: 50%;
+    top: 75%;
+
+}
+
+.button {
+    margin: 0;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: inline-block;
+    border-radius: 8px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 16px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/*//////////////////////////////////////////////////////*/
 /*
 
 DT {
@@ -65,60 +175,3 @@ p {
 }
 
 */
-.Logo {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    margin-left: -105px
-}
-
-.game_title {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    color: #fff;
-    -webkit-text-stroke: 1px black;
-}
-
-.game_descr {
-    text-align: center;
-    font-family: 'Nunito', sans-serif;
-    position: absolute;
-    top: 60%;
-    width: 100%;
-    color: #fff;
-    -webkit-text-stroke: 1px black;
-}
-
-.text_fade_in {
-    animation: opac 3.5s
-}
-
-@keyframes opac {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-/*//////////////////////////////////////////////////////*/
-.parallax {
-    /* The image used */
-    background-image: url("images/3.png");
-
-    /* Full height */
-    height: 100%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/*//////////////////////////////////////////////////////*/
