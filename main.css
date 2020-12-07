@@ -22,8 +22,8 @@ html {
 }
 
 */
-
 .content {
+    top: 50%;
     width: 960px;
     margin: 0px auto;
     box-sizing: border-box;
@@ -41,6 +41,14 @@ html {
     left: 50%;
     top: 10%;
     margin-left: -105px
+}
+
+.ccbysa {
+    position: absolute;
+    margin-top: 5px;
+    border-width: 0;
+    left: 95%;
+    margin-left: -40px
 }
 
 .game_title {
