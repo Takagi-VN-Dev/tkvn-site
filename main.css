@@ -44,10 +44,10 @@ li a:hover:not(.active) {
     left: 0;
     bottom: 0;
     right: 0;
-    width: 1000px;
+    width: 900px;
     height: 500px;
     background: white;
-    opacity: 0.8;
+    opacity: 0.9;
     margin: auto;
     border: 5px solid black;
     box-shadow: 5px 5px;
