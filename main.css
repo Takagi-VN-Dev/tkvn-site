@@ -5,35 +5,37 @@ html {
     line-height: 1.6em;
     height: 100%;
 }
+
 /* ---Bottom Nav Bar---*/
+/*//////////////////////////////////////////////////////*/
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #282e34;
-  bottom: 0;
-  width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #282e34;
+    bottom: 0;
+    width: 100%;
 }
 
 li {
-  float: left;
+    float: left;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 7px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 7px 16px;
+    text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+    background-color: #111;
 }
 
 .active {
-  background-color: #4CAF50;
+    background-color: #f89090;
 }
 
 /*//////////////////////////////////////////////////////*/
@@ -108,6 +110,10 @@ li a:hover:not(.active) {
     animation: opac 3.8s
 }
 
+.text_fade_in_content {
+    animation: opac 1.3s
+}
+
 @keyframes opac {
     from {
         opacity: 0
@@ -121,7 +127,7 @@ li a:hover:not(.active) {
 /*//////////////////////////////////////////////////////*/
 .parallax {
     /* The image used */
-    background-image: url("images/3.jpg");
+    background-image: url("images/5.jpg");
 
     /* Full height */
     height: 100%;
