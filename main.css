@@ -5,23 +5,56 @@ html {
     line-height: 1.6em;
     height: 100%;
 }
+/* ---Bottom Nav Bar---*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #282e34;
+  bottom: 0;
+  width: 100%;
+}
 
-.banner-divider {
-    position: relative;
-    background: #497b40;
-    height: 40px;
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 7px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+/*//////////////////////////////////////////////////////*/
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 1000px;
+    height: 500px;
+    background: white;
+    opacity: 0.8;
+    margin: auto;
+    border: 5px solid black;
+    box-shadow: 5px 5px;
+    border-radius: 20px
 }
 
 
-/*blank template
-
-.banner-divider-blank {
-    position: relative;
-    background: none;
-    height: 40px;
-}
-
-*/
 .content {
     top: 50%;
     width: 960px;
@@ -88,7 +121,7 @@ html {
 /*//////////////////////////////////////////////////////*/
 .parallax {
     /* The image used */
-    background-image: url("images/3.png");
+    background-image: url("images/3.jpg");
 
     /* Full height */
     height: 100%;
@@ -153,6 +186,21 @@ html {
 }
 
 /*//////////////////////////////////////////////////////*/
+
+/*blank template
+
+.banner-divider-blank {
+    position: relative;
+    background: none;
+    height: 40px;
+}
+.banner-divider {
+    position: relative;
+    background: #497b40;
+    height: 40px;
+}
+*/
+
 /*
 
 DT {
