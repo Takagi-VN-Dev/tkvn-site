@@ -14,6 +14,11 @@
     <!--- NOTE: w3s css <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> --->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script>
+    function fadeIn(obj) {
+        $(obj).delay(800).fadeIn(1000);
+    } /* this is the fade in function for the Logo fade in effect */
+</script>
     <title> Teaser Takagi-san VN </title>
 </head>
 
@@ -41,27 +46,17 @@
         </span>
 
     </div>
+      <ul>
 
-    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:5px 40px;text-align: justify;">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="samples.html">Samples</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li style="float:right"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a></li>
 
-        <a>Made with <font color="green">♥</font> by Takagi-Discord Development team.</a>
-        <img src="files/images/Icons/googleplus.png" height="16" width="16"><a href="about.html">
-            About</a>
-
-        <img src="files/images/Icons/twitter.png" height="16" width="16"><a href="#Samples" target="_blank">Samples</a>
-
-        <img src="files/images/Icons/twitter.png" height="16" width="16"><a href="#Staff" target="_blank">Staff</a>
-
-        <img class="ccbysa" alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
-
-    </div>
+    </ul>
     
 </body>
 
 </html>
 
-<script>
-    function fadeIn(obj) {
-        $(obj).delay(800).fadeIn(1000);
-    } /* this is the fade in function for the Logo fade in effect */
-</script>
