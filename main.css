@@ -51,6 +51,7 @@ li a:hover:not(.active) {
     background: white;
     opacity: 0.9;
     margin: auto;
+    padding: 25px;
     border: 5px solid black;
     box-shadow: 5px 5px;
     border-radius: 20px
@@ -189,6 +190,11 @@ li a:hover:not(.active) {
 .button:hover span:after {
     opacity: 1;
     right: 0;
+}
+.h2{
+    color: #000;
+    margin-left: 0em;
+    margin-top: 1.33em;
 }
 
 /*//////////////////////////////////////////////////////*/
