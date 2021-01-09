@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--- TODO: Add a Favicon --->
+    <link rel="shortcut icon" href="files/favicon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="lightbox.min.css">
+    <!--- NOTE: Google Fonts --->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Nunito:wght@700&family=Poppins:wght@900&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <title> Teaser Takagi-san VN </title>
+
+</head>
+<style type="text/css">
+    .container p {
+
+        text-indent: 20px;
+
+        font-weight: bold;
+        color: #000000;
+
+    }
+    
+</style>
+
+<body>
+    <div class="parallax">
+        <span class="text_fade_in_content">
+            <div class="container">
+                <div class="inner-content">
+                    <h1>Samples</h1>
+                    <h2>Audio</h2>
+                    <figure>
+                        <div class="row">
+                        <div class="column"><figcaption>Everyday Song:</figcaption>
+                        <audio controls>
+                            <source src="Sounds/Everyday.ogg" type="audio/mpeg"></audio> </div>
+                        <div class="column"><figcaption>A Sunny Way Home:</figcaption>
+                        <audio controls>
+                            <source src="Sounds/A-sunny-way-home.ogg" type="audio/mpeg">
+                        </audio></div>
+                         </figure>
+                    <h2>Screenshot</h2>
+                       <div class = "row">
+                        <div class = "column">
+                    <a href="images/1.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="imgSam" src="images/1.jpg" alt="" /></a></div>
+                    <div class="column"><a href="images/5.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."> <img class="imgSam" src="images/5.jpg" alt="" /></a></div>
+                   <div class="column"> <a href="images/3.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="imgSam" src="images/3.jpg" alt="" /></a></div>
+                                        </div>
+                </div>
+
+            </div>
+        </div>
+        </span>
+    </div>
+
+    <ul>
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="samples.html">Samples</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li style="float:right"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a></li>
+
+    </ul>
+    <!--- DONT TOUCH NOR MOVE THIS-->
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+</body>
+
+</html>
+
+<script>
+    function fadeIn(obj) {
+        $(obj).delay(800).fadeIn(1000);
+} 
+    /* this is the fade in function for the Logo fade in effect */
+    document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    /*prevent two audio file play at the same time
+</script>
+
+<!--Lightbox script made by https://github.com/lokesh Thanks Lokesh!-->
