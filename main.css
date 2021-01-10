@@ -57,20 +57,48 @@ li a:hover:not(.active) {
     border-radius: 20px
 }
 
- .imgSam {width:100%;
- height:90%;
-} 
+.imgSam {
+    width: 100%;
+    height: 90%;
+}
+
 .row {
-  display: flex;
+    display: flex;
 }
 
 /* Create three equal columns that sits next to each other */
 .column {
-  flex: 33.33%;
-  padding: 5px;
+    flex: 33.33%;
+    padding: 5px;
 }
 
-.content {
+}
+
+.active {
+    background-color: #f89090;
+}
+
+/*//////////////////////////////////////////////////////*/
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 900px;
+    height: 500px;
+    background: white;
+    opacity: 0.9;
+    margin: auto;
+    padding: 25px;
+    border: 5px solid black;
+    box-shadow: 5px 5px;
+    border-radius: 20px
+}
+
+
+main .content {
     top: 50%;
     width: 960px;
     margin: 0px auto;
@@ -203,7 +231,8 @@ li a:hover:not(.active) {
     opacity: 1;
     right: 0;
 }
-.h2{
+
+.h2 {
     color: #000;
     margin-left: 0em;
     margin-top: 1.33em;
