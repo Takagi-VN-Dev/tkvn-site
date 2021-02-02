@@ -1,9 +1,20 @@
 body,
 html {
+
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Takagiwebfont;
     line-height: 1.6em;
     height: 100%;
+}
+@font-face { 
+    font-family: Takagiwebfont;
+     src: url('Fonts/Halogen.ttf');
+
+ } 
+ @font-face { 
+    font-family: Takagiwebfont; 
+    font-weight: bold; 
+    src: url('Fonts/RifficFree-Bold.ttf');
 }
 
 /* ---Bottom Nav Bar---*/
