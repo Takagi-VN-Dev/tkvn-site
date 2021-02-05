@@ -6,14 +6,16 @@ html {
     line-height: 1.6em;
     height: 100%;
 }
-@font-face { 
-    font-family: Takagiwebfont;
-     src: url('Fonts/Halogen.ttf');
 
- } 
- @font-face { 
-    font-family: Takagiwebfont; 
-    font-weight: bold; 
+@font-face {
+    font-family: Takagiwebfont;
+    src: url('Fonts/Halogen.ttf');
+
+}
+
+@font-face {
+    font-family: Takagiwebfont;
+    font-weight: bold;
     src: url('Fonts/RifficFree-Bold.ttf');
 }
 
@@ -182,7 +184,7 @@ main .content {
     top: 60%;
     width: 100%;
     color: #fff;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 0.7px black;
 }
 
 .text_fade_in {
@@ -275,50 +277,3 @@ main .content {
     margin-left: 0em;
     margin-top: 1.33em;
 }
-
-/*//////////////////////////////////////////////////////*/
-
-/*blank template
-
-.banner-divider-blank {
-    position: relative;
-    background: none;
-    height: 40px;
-}
-.banner-divider {
-    position: relative;
-    background: #497b40;
-    height: 40px;
-}
-*/
-
-/*
-
-DT {
-    font-weight: bold;
-    margin-top: .33em;
-    margin-left: 2.5em;
-}
-
-H1 {
-    color: #000;
-    margin-left: 0em;
-}
-
-H2 {
-    color: #000;
-    margin-left: 0em;
-    margin-top: 1.33em;
-}
-
-
-H3 {
-    color: #000;
-    margin-left: 1em;
-}
-
-p {
-    margin-left: 2.5em;
-}
-
-*/
