@@ -172,19 +172,19 @@ main .content {
 .game_title {
     text-align: center;
     position: absolute;
-    top: 50%;
+    top:50%;
     width: 100%;
     color: #fff;
     -webkit-text-stroke: 2px black;
 }
 
 .game_descr {
-    text-align: center;
+  
     position: absolute;
     top: 60%;
     width: 100%;
     color: #fff;
-    -webkit-text-stroke: 0.7px black;
+    -webkit-text-stroke: 2px black;
 }
 
 .text_fade_in {
