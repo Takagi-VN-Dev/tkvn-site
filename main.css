@@ -21,8 +21,34 @@ html {
 
 /* ---Bottom Nav Bar---*/
 /*//////////////////////////////////////////////////////*/
+#ul_index {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #282e34;
+    bottom: 0;
+    width: 100%;
+}
+
 #ul {
     list-style-type: none;
+    position: absolute;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 11px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #282e34;
+    bottom: 0;
+    width: 100%;
+}
+
+#ul_staff {
+    list-style-type: none;
+    position: absolute;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 11px;
     margin: 0;
     padding: 0;
     overflow: hidden;
