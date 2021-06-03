@@ -38,28 +38,84 @@
         }
 
     }
+
+    #for-DL-ul {
+        font-size: 20px;
+        list-style-type: circle;
+        background-color: white;
+        line-height: 1.6em;
+        list-style-position: inside;
+    }
+
+    #for-DL-li {
+        float: none;
+        padding: 5px;
+        padding-left: 5px;
+        padding-top: 2px;
+        list-style-type: none;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 800px) {
+        .container {
+            width: 300px;
+        }
+
+        #for-DL-li {
+            padding-left: 0px;
+
+        }
+
+        #for-DL-ul {
+            font-size: 10px;
+        }
+
+        h1,
+        h2 {
+            font-size: 15px;
+        }
+
+    }
 </style>
 
 <body>
     <div class="parallax">
         <span class="text_fade_in_content">
-            <div class="container">
-                <div class="inner-content">
-                    <h1>Download</h1>
-                    <p>Windows:</p>
+            <div class="container" style="max-height: 1000px;padding-right: 0;padding-top: 1px">
+                <div class="inner-content" style="max-height: 97%;overflow: auto;">
+                    <div id="scroll" style="height: auto;">
+                        <h1 style="font-size: 35px;padding-top: 25px">Download</h1>
+                        <!-- WINDOWS -->
+                        <h2 style="padding-top: 10px; padding-left: 25px;">Windows(x86):</h2>
+                        <ul id="for-DL-ul">
+                            <li id="for-DL-li"><a href="https://github.com/Takagi-VN-Dev/tkvn-site/releases/download/v1/TKVN.WINDOWS.TEST.rar"><img alt="GitHub release (latest by date and asset)" src="https://img.shields.io/github/downloads/Takagi-VN-Dev/tkvn-site/v1/TKVN.WINDOWS.TEST.rar?color=Green&label=Download%20TKVN%200.1%20WINDOWS&logo=Github&style=for-the-badge"></a></li>
+                        </ul>
+                        <!-- Linux -->
+                        <h2 style="padding-top: 10px; padding-left: 25px;">Linux:</h2>
+                        <ul id="for-DL-ul">
+                            <li id="for-DL-li"><a href="https://github.com/Takagi-VN-Dev/tkvn-site/releases/download/v1/TKVN.LINUX.TEST.rar"><img alt="GitHub release (latest by date and asset)" src="https://img.shields.io/github/downloads/Takagi-VN-Dev/tkvn-site/v1/TKVN.LINUX.TEST.rar?color=Green&label=Download%20TKVN%200.1%20Linux&logo=Github&style=for-the-badge"></a></li>
+                        </ul>
+                        <!-- Android -->
+                        <h2 style="padding-top: 10px; padding-left: 25px;">Android:</h2>
+                        <ul id="for-DL-ul">
+                            <li id="for-DL-li"><a href="https://github.com/Takagi-VN-Dev/tkvn-site/releases/download/v1/TKVN.ANDROID.APK.TEST.rar"><img alt="GitHub release (latest by date and asset)" src="https://img.shields.io/github/downloads/Takagi-VN-Dev/tkvn-site/v1/TKVN.ANDROID.APK.TEST.rar?color=Green&label=Download%20TKVN%200.1%20ANDROID&logo=Github&style=for-the-badge"></a></li>
+                        </ul>
+                        <footer>
+                            <ul id="ul_staff" style="left: 0px">
+                                <li id="li"><a href="index.html">Home</a></li>
+                                <li id="li"><a href="about.html">About</a></li>
+                                <li id="li"><a href="samples.html">Samples</a></li>
+                                <li id="li"><a class="active" href="download_page.html">Download</a></li>
+                                <li id="li"><a href="staff.html">Staff</a></li>
+                                <li style="float:right" id="li"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a></li>
+
+                            </ul>
+                        </footer>
+                    </div>
                 </div>
-                <ul id="ul" style="left: 0px">
-                    <li id="li"><a href="index.html">Home</a></li>
-                    <li id="li"><a href="about.html">About</a></li>
-                    <li id="li"><a href="samples.html">Samples</a></li>
-                    <li id="li"><a class="active" href="download_page.html">Download</a></li>
-                    <li id="li"><a href="staff.html">Staff</a></li>
-                    <li style="float:right" id="li"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a></li>
-                </ul>
             </div>
         </span>
     </div>
-
 </body>
 
 </html>
@@ -68,3 +124,11 @@
         $(obj).delay(800).fadeIn(1000);
     } /* this is the fade in function for the Logo fade in effect */
 </script>
+
+
+<!-- 
+        <h2 style="padding-top: 10px; padding-left: 25px;">Windows:</h2>
+                        <ul id="for-DL-ul">
+                            <li id="for-DL-li"><a href=""></a></li>
+                        </ul>
+-->
