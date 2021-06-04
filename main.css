@@ -85,8 +85,9 @@ html {
 /* ---index nav bar---*/
 
 .index_container {
-    margin: 0 auto;
-    padding: 10em 3em;
+    position: absolute;
+    margin-top: 45%;
+    margin-left: 33%;
     text-align: center;
 }
 
