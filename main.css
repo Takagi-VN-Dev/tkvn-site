@@ -21,38 +21,54 @@ html {
 
 /* ---Bottom Nav Bar---*/
 /*//////////////////////////////////////////////////////*/
-#ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #282e34;
-    bottom: 0;
+
+.nav-container {
+    /* display: none; */
     width: 100%;
-}
-
-#li {
-    float: left;
-}
-
-#li > a {
-    display: block;
-    color: white;
     text-align: center;
-    padding: 7px 16px;
+    position: absolute;
+    top: 90%;
+}
+
+.nav {
+    display: inline-block;
+}
+
+.nav ul {
+    display: flex; /* To remove auto spacing between li elements */
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    display: inline-block;
+    padding: 7px 12px;
+    color: white;
+    transition: all 0.3s;
+    margin: 0 10px;
+}
+
+.nav li a, .nav li a:focus, .nav li a:visited {
+    color: white;
     text-decoration: none;
 }
 
-#li > span {
-    font-weight: bold;
+.nav li:not([data-status="selected"]):not(:hover) {
+    text-shadow: 0px 0px 3px black; /* So it can be seen better with a bright background */
 }
 
-#li > a:hover:not(.active) {
-    background-color: #111;
+.nav li[data-status="selected"] {
+    background: #fb6983;
+    pointer-events: none;
 }
 
-.active {
-    background-color: #f89090;
+.nav li:not([data-status="selected"]):hover {
+    background: #ff99ab;
+    cursor: pointer;
+}
+
+.nav li:not([data-status="selected"]) {
+    border-top: 1px solid white;
 }
 
 /*//////////////////////////////////////////////////////*/
@@ -89,8 +105,6 @@ html {
 .column {
     flex: 33.33%;
     padding: 5px;
-}
-
 }
 
 .active {
@@ -276,4 +290,106 @@ main .content {
     color: #000;
     margin-left: 0em;
     margin-top: 1.33em;
+}
+
+
+/* Staff */
+/*//////////////////////////////////////////////////////*/
+
+.samples-container .container p,
+.about-container .container p {
+    text-indent: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.staff-container #for-staff-ul {
+    font-size: 20px;
+    list-style-type: circle;
+    background-color: white;
+    line-height: 1.6em;
+    list-style-position: inside;
+}
+
+.staff-container #for-staff-li {
+    float: none;
+    padding: 5px;
+    padding-left: 20px;
+    padding-top: 5px;
+    list-style-type: disc;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 300px;
+        height: auto;
+        padding-right: 0px;
+        padding-top: 0px;
+        margin: 55px auto 130px auto;
+    }
+
+    #for-staff-li {
+        padding-left: 0px;
+
+    }
+
+    #for-staff-ul {
+        font-size: 10px;
+    }
+
+    h1,
+    h2 {
+        font-size: 15px;
+    }
+
+    .column {
+        padding: 0px;
+    }
+
+    .row {
+        display: inline;
+    }
+
+    .imgsam {
+        height: 1px;
+    }
+
+    .inner-content {
+        max-height: 97%;
+        overflow: auto;
+
+    }
+}
+
+img, .nav ul {
+    user-select: none;
+}
+
+.container[data-component="about"] p {
+    text-indent: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.container[data-component="staff"] #for-staff-li {
+    float: none;
+    padding: 5px;
+    padding-left: 20px;
+    padding-top: 5px;
+    list-style-type: disc;
+    font-weight: bold;
+}
+
+.container[data-component="staff"] #for-staff-ul {
+    font-size: 20px;
+    list-style-type: circle;
+    background-color: white;
+    line-height: 1.6em;
+    list-style-position: inside;
+}
+
+::selection {
+    color: white;
+    background: #fb6983
 }
