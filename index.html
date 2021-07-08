@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/8df9762b30.js" crossorigin="anonymous"></script>
     <!--- TODO: Add a Favicon --->
     <link rel="shortcut icon" href="files/favicon.png" type="image/png" />
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -47,20 +48,56 @@
 
 <body>
 
-    <div class="parallax"></div>
-
-    <div class="nav-container text_fade_in">
-        <div class="nav">
-            <ul>
-                <li data-ref="home">Home</li>
-                <li data-ref="about">About</li>
-                <li data-ref="samples">Samples</li>
-                <li data-ref="download"><a href="https://github.com">Download</a></li>
-                <li data-ref="staff">Staff</li>
-            </ul>
+    <div class="parallax">
+        <div class="container">
+            <div class="ajax"></div>
+            <div class="nav-container">
+                <ul class="nav">
+                    <li data-ref="home" data-selectable="false" data-type="nav-name">
+                        <span class="nav-title">O Takagi VN Site</span>
+                    </li>
+                    <!--
+                    -->
+                    <li data-ref="home"><i data-type="nav-icon" class="fas fa-home"></i><span
+                            data-type="nav-name">Home</span></li>
+                    <!--
+                    -->
+                    <li data-ref="about"><i data-type="nav-icon" class="fas fa-info-circle"></i><span data-type="nav-name">About</span></li>
+                    <!--
+                    -->
+                    <li data-ref="samples"><i data-type="nav-icon" class="fas fa-photo-video"></i><span
+                            data-type="nav-name">Samples</span></li>
+                    <!--
+                    -->
+                    <li data-ref="download"><i data-type="nav-icon" class="fas fa-cloud-download-alt"></i><a
+                            href="https://github.com"><span data-type="nav-name">Download</span></a></li>
+                    <!--
+                    -->
+                    <li data-ref="staff"><i data-type="nav-icon" class="fas fa-users"></i><span
+                            data-type="nav-name">Staff</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 
+    <script>
+        function addEvents() {
+            console.log("A");
+            // Prevent two audio file play at the same time
+            document.addEventListener('play', function (e) {
+                var audios = document.getElementsByTagName('audio');
+                for (var i = 0, len = audios.length; i < len; i++) {
+                    if (audios[i] != e.target) {
+                        audios[i].pause();
+                    }
+                }
+            }, true);
+
+            $("[data-ref='download']").on("click", function (e) {
+                location.href = $(this).find("a").attr("href");
+            });
+        }
+    </script>
     <script>
 
         $(document).ready(function () {
@@ -70,6 +107,9 @@
             function fadeIn(obj) {
                 $(obj).delay(800).fadeIn(1000);
             }
+
+            addEvents();
+            $(".container").css({ opacity: 0, visibility: "visible" }).animate({ opacity: 0.9 }, 1300);;
 
             // Actions for the navbar (AJAX call for every element, except Download, or the current selected one, to avoid reloading the same part again)
             $("[data-ref]").on("click", function () { // Selector "[data-ref]:not([data-status='selected'])" not working, so we check if it's selected later :(
@@ -85,10 +125,9 @@
                             type: 'POST',
                             url: `${mod}.html`,
                             success: function (data) {
-
                                 $(".nav li").attr("data-status", "iddle")
-                                $(this).attr("data-status", "selected")
-                                $(".parallax").html(data)
+                                $(`[data-ref='${mod}']`).attr("data-status", "selected")
+                                $(".ajax").html(data)
 
                                 // Add events to elements, since when we modify the HTML, the events get lost
                                 if (mod === "samples") {
@@ -114,21 +153,6 @@
     </script>
 
     <script src="js/lightbox-plus-jquery.min.js"></script>
-
-    <script>
-        function addEvents() {
-
-            // Prevent two audio file play at the same time
-            document.addEventListener('play', function (e) {
-                var audios = document.getElementsByTagName('audio');
-                for (var i = 0, len = audios.length; i < len; i++) {
-                    if (audios[i] != e.target) {
-                        audios[i].pause();
-                    }
-                }
-            }, true);
-        }
-    </script>
 
     <!--Lightbox script made by https://github.com/lokesh Thanks Lokesh!-->
 
