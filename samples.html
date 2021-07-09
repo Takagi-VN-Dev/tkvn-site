@@ -1,126 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--- TODO: Add a Favicon --->
-    <link rel="shortcut icon" href="files/favicon.png" type="image/png" />
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="lightbox.min.css">
-
-    <title> Teaser Takagi-san VN </title>
-</head>
-<style type="text/css">
-    .container p {
-
-        text-indent: 20px;
-
-        font-weight: bold;
-        color: #000000;
-
-    }
-
-    @media screen and (max-width: 800px) {
-        .container {
-            width: 300px;
-            height: auto;
-            padding-right: 0px;
-            padding-top: 0px;
-
-        }
-
-        h1,
-        h2 {
-            font-size: 15px;
-        }
-
-        .column {
-            padding: 0px;
-        }
-
-        .row {
-            display: inline;
-        }
-
-        .imgsam {
-            height: 1px;
-        }
-
-        .inner-content {
-            max-height: 97%;
-            overflow: auto;
-
-        }
-</style>
-
-<body>
-    <div class="parallax">
-        <span class="text_fade_in_content">
-            <div class="container">
-                <div class="inner-content">
-                    <h1>Samples</h1>
-                    <h2>Audio:</h2>
-                    <figure>
-                        <div class="row">
-                            <div class="column">
-                                <figcaption>Everyday - Hiroaki Tsutsumi:</figcaption>
-                                <audio controls>
-                                    <source src="Sounds/Everyday.ogg" type="audio/mpeg">
-                                </audio>
-                            </div>
-                            <div class="column">
-                                <figcaption>A Sunny Way Home - Hiroaki Tsutsumi:</figcaption>
-                                <audio controls>
-                                    <source src="Sounds/A-sunny-way-home.ogg" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-                    </figure>
-                    <h2>Screenshots:</h2>
-                    <br>
-                    <div class="row">
-                        <div class="column"><a href="images/1.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="imgSam" src="images/1.png" alt="" /></a></div>
-                        <div class="column"><a href="images/2.png" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="imgSam" src="images/2.png" alt="" /></a></div>
-                        <div class="column"><a href="images/3.png" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."> <img class="imgSam" src="images/3.png" alt="" /></a></div>
-
-                    </div>
+<div class="text_fade_in_content" data-component="samples">
+    <div class="inner-content">
+        <h1>Samples</h1>
+        <h2>Audio:</h2>
+        <figure>
+            <div class="row">
+                <div class="column">
+                    <figcaption>Everyday - Hiroaki Tsutsumi:</figcaption>
+                    <audio controls>
+                        <source src="Sounds/Everyday.ogg" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="column">
+                    <figcaption>A Sunny Way Home - Hiroaki Tsutsumi:</figcaption>
+                    <audio controls>
+                        <source src="Sounds/A-sunny-way-home.ogg" type="audio/mpeg">
+                    </audio>
                 </div>
             </div>
-        </span>
+        </figure>
+        <h2>Screenshots:</h2>
+        <br>
+        <div class="row">
+            <div class="column"><a href="images/1.png" data-lightbox="example-set"
+                    data-title="Click the right half of the image to move forward."><img class="imgSam"
+                        src="images/1.png" alt="" /></a></div>
+            <div class="column"><a href="images/2.png" data-lightbox="example-set"
+                    data-title="The next image in the set is preloaded as you're viewing."><img class="imgSam"
+                        src="images/2.png" alt="" /></a></div>
+            <div class="column"><a href="images/3.png" data-lightbox="example-set"
+                    data-title="Or press the right arrow on your keyboard."> <img class="imgSam" src="images/3.png"
+                        alt="" /></a></div>
+
+        </div>
     </div>
-
-    <ul id="ul">
-        <li id="li"><a href="index.html">Home</a></li>
-        <li id="li"><a href="about.html">About</a></li>
-        <li id="li"><a class="active" href="samples.html">Samples</a></li>
-        <li id="li"><a href="staff.html">Staff</a></li>
-        <li style="float:right" id="li"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a></li>
-
-    </ul>
-    <!--- DONT TOUCH NOR MOVE THIS-->
-    <script src="js/lightbox-plus-jquery.min.js"></script>
-</body>
-
-</html>
-
-<script>
-    function fadeIn(obj) {
-        $(obj).delay(800).fadeIn(1000);
-
-    }
-    /* this is the fade in function for the Logo fade in effect */
-    document.addEventListener('play', function(e) {
-        var audios = document.getElementsByTagName('audio');
-        for (var i = 0, len = audios.length; i < len; i++) {
-            if (audios[i] != e.target) {
-                audios[i].pause();
-            }
-        }
-    }, true);
-    //prevent two audio file play at the same time
-</script>
-
-
-<!--Lightbox script made by https://github.com/lokesh Thanks Lokesh!-->
+</div>
