@@ -127,6 +127,8 @@ html {
     /* overflow-y: hidden; */
 
     max-height: 90%;
+    height: 90%;
+    
     display: grid;
     grid-template-rows: 1fr auto;
     grid-row-gap: 25px;
@@ -142,6 +144,11 @@ html {
     overflow-y: auto;
     height: calc(100% - 45px);
     margin: 20px 15px 0px 15px;
+}
+
+.container .ajax[data-target="home"] {
+    display: grid;
+    align-items: center;
 }
 
 [data-component="home"] {

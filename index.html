@@ -50,7 +50,7 @@
 
     <div class="parallax">
         <div class="container">
-            <div class="ajax"></div>
+            <div class="ajax" data-target="home"></div>
             <div class="nav-container">
                 <ul class="nav">
                     <li data-ref="home" data-selectable="false" data-type="nav-name">
@@ -82,10 +82,9 @@
 
     <script>
         function addEvents() {
-            console.log("A");
             // Prevent two audio file play at the same time
             document.addEventListener('play', function (e) {
-                var audios = document.getElementsByTagName('audio');
+                var audios = document.getElementsByTagName('audio')
                 for (var i = 0, len = audios.length; i < len; i++) {
                     if (audios[i] != e.target) {
                         audios[i].pause();
@@ -95,13 +94,13 @@
 
             $("[data-ref='download']").on("click", function (e) {
                 location.href = $(this).find("a").attr("href");
-            });
+            })
         }
     </script>
     <script>
 
         $(document).ready(function () {
-            const ajaxElements = ["home", "about", "samples", "staff"]
+            const ajaxElements = ["home", "about", "samples", "staff"];
 
             /* this is the fade in function for the Logo fade in effect */
             function fadeIn(obj) {
@@ -109,7 +108,7 @@
             }
 
             addEvents();
-            $(".container").css({ opacity: 0, visibility: "visible" }).animate({ opacity: 0.9 }, 1300);;
+            $(".container").css({ opacity: 0, visibility: "visible" }).animate({ opacity: 0.9 }, 1300);
 
             // Actions for the navbar (AJAX call for every element, except Download, or the current selected one, to avoid reloading the same part again)
             $("[data-ref]").on("click", function () { // Selector "[data-ref]:not([data-status='selected'])" not working, so we check if it's selected later :(
@@ -118,38 +117,38 @@
 
                     // Change the selected element from the navbar visually
 
-                    let mod = $(this).attr("data-ref")
+                    let mod = $(this).attr("data-ref");
 
                     if (ajaxElements.includes(mod)) {
                         $.ajax({
                             type: 'POST',
                             url: `${mod}.html`,
                             success: function (data) {
-                                $(".nav li").attr("data-status", "iddle")
-                                $(`[data-ref='${mod}']`).attr("data-status", "selected")
-                                $(".ajax").html(data)
+                                $(".nav li").attr("data-status", "iddle");
+                                $(`[data-ref='${mod}']`).attr("data-status", "selected");
+                                $(".ajax").html(data).attr("data-target", mod);
 
                                 // Add events to elements, since when we modify the HTML, the events get lost
                                 if (mod === "samples") {
-                                    addEvents()
+                                    addEvents();
                                 }
                                 else if (mod === "home") {
-                                    fadeIn("#preload")
+                                    fadeIn("#preload");
                                 }
                             },
                             error: function (request, error) {
                                 // console.log("Request: " + JSON.stringify(request))
-                                alert("There was an error with the server. Please try again later")
+                                alert("There was an error with the server. Please try again later");
                             }
-                        });
+                        })
                     }
                     else if (mod === "downlaod") {
                     }
                 }
             })
 
-            $("[data-ref='home']").click()
-        });
+            $("[data-ref='home']").click();
+        })
     </script>
 
     <script src="js/lightbox-plus-jquery.min.js"></script>
