@@ -121,7 +121,7 @@
 
                     if (ajaxElements.includes(mod)) {
                         $.ajax({
-                            type: 'POST',
+                            type: 'GET',
                             url: `${mod}.html`,
                             success: function (data) {
                                 $(".nav li").attr("data-status", "iddle");
