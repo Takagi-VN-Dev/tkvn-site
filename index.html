@@ -69,9 +69,9 @@
                             data-type="nav-name">Samples</span></li>
                     <!--
                     -->
-                    <li data-ref="download"><i data-type="nav-icon" class="fas fa-cloud-download-alt"></i><a
-                            href="https://github.com"><span data-type="nav-name">Download</span></a></li>
-                    <!--
+                    <li data-ref="download_page"><i data-type="nav-icon" class="fas fa-cloud-download-alt"></i><span data-type="nav-name">Download</span></li>
+                    <!--<a
+                            href="https://github.com"></a>
                     -->
                     <li data-ref="staff"><i data-type="nav-icon" class="fas fa-users"></i><span
                             data-type="nav-name">Staff</span></li>
@@ -92,15 +92,13 @@
                 }
             }, true);
 
-            $("[data-ref='download']").on("click", function (e) {
-                location.href = $(this).find("a").attr("href");
-            })
+            
         }
     </script>
     <script>
 
         $(document).ready(function () {
-            const ajaxElements = ["home", "about", "samples", "staff"];
+            const ajaxElements = ["home", "about", "samples", "download_page", "staff"];
 
             /* this is the fade in function for the Logo fade in effect */
             function fadeIn(obj) {
@@ -142,8 +140,9 @@
                             }
                         })
                     }
-                    else if (mod === "downlaod") {
-                    }
+                    // what's the purporse of this?
+                    /*else if (mod === "download_page") {
+                    }*/
                 }
             })
 
