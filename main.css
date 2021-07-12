@@ -82,43 +82,6 @@ html {
 }
 
 /*//////////////////////////////////////////////////////*/
-/* ---index nav bar---*/
-
-.index_container {
-    position: absolute;
-    margin-top: 45%;
-    margin-left: 33%;
-    text-align: center;
-}
-
-.index_container a {
-    color: #FFF;
-    text-decoration: none;
-    margin: 0px 10px;
-    padding: 10px 10px;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
-}
-
-/* Pull down  */
-.pullDown a:before {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0px;
-    top: 0px;
-    content: '';
-    background: #FFF;
-    opacity: 0.3;
-    transition: all 0.3s;
-}
-
-.pullDown a:hover:before {
-    height: 100%;
-}
-
-/*//////////////////////////////////////////////////////*/
 .imgSam {
     width: 100%;
     height: 95%;

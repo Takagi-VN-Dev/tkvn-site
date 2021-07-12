@@ -29,6 +29,50 @@
             overflow: hidden;
             align-items: center;
         }
+        
+        /*Reworked Navbar*/
+        
+        .nav-container {
+            top: 55%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav {
+            display: inline-block;
+        }
+
+        ul {
+            display: flex; /* To remove auto spacing between li elements */
+            padding: 0;
+            margin: 0;
+            user-select: none;
+        }
+
+        li {
+            display: inline-block;
+            padding: 7px 12px;
+            color: white;
+            transition: all 0.3s;
+            margin: 0 10px;
+        }
+
+        li:not([data-status="selected"]):not(:hover) {
+            text-shadow: 0px 0px 3px black; /* So it can be seen better with a bright background */
+        }
+
+        li[data-status="selected"] {
+            background: #fb6983;
+        }
+
+        li:not([data-status="selected"]):hover {
+            background: #ff99ab;
+            cursor: pointer;
+        }
+
+        li:not([data-status="selected"]) {
+            border-top: 1px solid white;
+        }
 
         @media screen and (max-width: 800px) {
 
@@ -79,13 +123,17 @@
                 <h2>A fan visual novel game based on Soichirou Yamamoto's work.</h2>
             </span>
             <a href="download_page.html"><button class="dl_button button" style="vertical-align:middle;"><span style="text-align: center; font-family: sans-serif;">Download now</span></button></a>
-            <div class="index_container pullDown">
-                <a class="active" href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="samples.html">Samples</a>
-                <a href="download_page.html">Download</a>
-                <a href="staff.html">Staff</a>
+            <div class="nav-container">
+            <div class="nav">
+                <ul>
+                    <li data-status="selected">Home</li>
+                    <li>About</li>
+                    <li>Samples</li>
+                    <li>Download</li>
+                    <li>Staff</li>
+                </ul>
             </div>
+        </div>
         </span>
 
     </div>
