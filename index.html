@@ -62,14 +62,16 @@
                             data-type="nav-name">Home</span></li>
                     <!--
                     -->
-                    <li data-ref="about"><i data-type="nav-icon" class="fas fa-info-circle"></i><span data-type="nav-name">About</span></li>
+                    <li data-ref="about"><i data-type="nav-icon" class="fas fa-info-circle"></i><span
+                            data-type="nav-name">About</span></li>
                     <!--
                     -->
                     <li data-ref="samples"><i data-type="nav-icon" class="fas fa-photo-video"></i><span
                             data-type="nav-name">Samples</span></li>
                     <!--
                     -->
-                    <li data-ref="download_page"><i data-type="nav-icon" class="fas fa-cloud-download-alt"></i><span data-type="nav-name">Download</span></li>
+                    <li data-ref="download_page"><i data-type="nav-icon" class="fas fa-cloud-download-alt"></i><span
+                            data-type="nav-name">Download</span></li>
                     <!--<a
                             href="https://github.com"></a>
                     -->
@@ -81,7 +83,12 @@
     </div>
 
     <script>
-        function addEvents() {
+        /* this is the fade in function for the Logo fade in effect */
+        function fadeIn(obj) {
+            $(obj).delay(800).fadeIn(1000);
+        }
+
+        function addPlayEvents() {
             // Prevent two audio file play at the same time
             document.addEventListener('play', function (e) {
                 var audios = document.getElementsByTagName('audio')
@@ -91,61 +98,60 @@
                     }
                 }
             }, true);
+        }
 
-            
+        const ajaxElements = ["home", "about", "samples", "download_page", "staff"];
+
+        function addNavEvents(element) {
+
+            if (element.attr("data-status") !== "selected") {
+
+                // Change the selected element from the navbar visually
+
+                let mod = element.attr("data-ref");
+
+                if (ajaxElements.includes(mod)) {
+                    $.ajax({
+                        type: 'GET',
+                        url: `${mod}.html`,
+                        success: function (data) {
+                            $(".nav li").attr("data-status", "iddle");
+                            $(`[data-ref='${mod}']`).attr("data-status", "selected");
+                            $(".ajax").html(data).attr("data-target", mod);
+
+                            // Add events to elements, since when we modify the HTML, the events get lost
+                            if (mod === "samples") {
+                                addPlayEvents();
+                            }
+                            else if (mod === "home") {
+                                fadeIn("#preload");
+
+                                $("[data-component='home'] [data-ref]").on("click", function () {
+                                    addNavEvents($(this));
+                                });
+                            }
+                        },
+                        error: function (request, error) {
+                            // console.log("Request: " + JSON.stringify(request))
+                            alert("There was an error with the server. Please try again later");
+                        }
+                    })
+                }
+            }
         }
     </script>
     <script>
 
         $(document).ready(function () {
-            const ajaxElements = ["home", "about", "samples", "download_page", "staff"];
-
-            /* this is the fade in function for the Logo fade in effect */
-            function fadeIn(obj) {
-                $(obj).delay(800).fadeIn(1000);
-            }
-
-            addEvents();
+            addPlayEvents();
             $(".container").css({ opacity: 0, visibility: "visible" }).animate({ opacity: 0.9 }, 1300);
 
             // Actions for the navbar (AJAX call for every element, except Download, or the current selected one, to avoid reloading the same part again)
             $("[data-ref]").on("click", function () { // Selector "[data-ref]:not([data-status='selected'])" not working, so we check if it's selected later :(
-
-                if ($(this).attr("data-status") !== "selected") {
-
-                    // Change the selected element from the navbar visually
-
-                    let mod = $(this).attr("data-ref");
-
-                    if (ajaxElements.includes(mod)) {
-                        $.ajax({
-                            type: 'GET',
-                            url: `${mod}.html`,
-                            success: function (data) {
-                                $(".nav li").attr("data-status", "iddle");
-                                $(`[data-ref='${mod}']`).attr("data-status", "selected");
-                                $(".ajax").html(data).attr("data-target", mod);
-
-                                // Add events to elements, since when we modify the HTML, the events get lost
-                                if (mod === "samples") {
-                                    addEvents();
-                                }
-                                else if (mod === "home") {
-                                    fadeIn("#preload");
-                                }
-                            },
-                            error: function (request, error) {
-                                // console.log("Request: " + JSON.stringify(request))
-                                alert("There was an error with the server. Please try again later");
-                            }
-                        })
-                    }
-                    // what's the purporse of this?
-                    /*else if (mod === "download_page") {
-                    }*/
-                }
+                addNavEvents($(this));
             })
 
+            // Triggers the initial component home
             $("[data-ref='home']").click();
         })
     </script>
