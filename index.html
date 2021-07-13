@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/8df9762b30.js" crossorigin="anonymous"></script>
+    <!--- TODO: Add a Favicon --->
+    <link rel="shortcut icon" href="files/favicon.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <style type="text/css">
+        h1 {
+            font-family: Takagiwebfont;
+            font-size: 65px;
+        }
+
+        p {
+            font-family: Takagiwebfont;
+        }
+
+        @media screen and (max-width: 800px) {
+
+            .game_title {
+                top: 46%;
+            }
+
+            .game_descr {
+                top: 58%;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <title> Teaser Takagi-san VN </title>
+
+</head>
+
+<body>
+
+    <div class="parallax">
+        <div class="container">
+            <div class="ajax" data-target="home"></div>
+            <div class="nav-container">
+                <ul class="nav">
+                    <li data-ref="home" data-selectable="false" data-type="nav-name">
+                        <span class="nav-title">O Takagi VN Site</span>
+                    </li>
+                    <!--
+                    -->
+                    <li data-ref="home"><i data-type="nav-icon" class="fas fa-home"></i><span
+                            data-type="nav-name">Home</span></li>
+                    <!--
+                    -->
+                    <li data-ref="about"><i data-type="nav-icon" class="fas fa-info-circle"></i><span
+                            data-type="nav-name">About</span></li>
+                    <!--
+                    -->
+                    <li data-ref="samples"><i data-type="nav-icon" class="fas fa-photo-video"></i><span
+                            data-type="nav-name">Samples</span></li>
+                    <!--
+                    -->
+                    <li data-ref="download_page"><i data-type="nav-icon" class="fas fa-cloud-download-alt"></i><span
+                            data-type="nav-name">Download</span></li>
+                    <!--<a
+                            href="https://github.com"></a>
+                    -->
+                    <li data-ref="staff"><i data-type="nav-icon" class="fas fa-users"></i><span
+                            data-type="nav-name">Staff</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* this is the fade in function for the Logo fade in effect */
+        function fadeIn(obj) {
+            $(obj).delay(800).fadeIn(1000);
+        }
+
+        function addPlayEvents() {
+            // Prevent two audio file play at the same time
+            document.addEventListener('play', function (e) {
+                var audios = document.getElementsByTagName('audio')
+                for (var i = 0, len = audios.length; i < len; i++) {
+                    if (audios[i] != e.target) {
+                        audios[i].pause();
+                    }
+                }
+            }, true);
+        }
+
+        const ajaxElements = ["home", "about", "samples", "download_page", "staff"];
+
+        function addNavEvents(element) {
+
+            if (element.attr("data-status") !== "selected") {
+
+                // Change the selected element from the navbar visually
+
+                let mod = element.attr("data-ref");
+
+                if (ajaxElements.includes(mod)) {
+                    $.ajax({
+                        type: 'GET',
+                        url: `${mod}.html`,
+                        success: function (data) {
+                            $(".nav li").attr("data-status", "iddle");
+                            $(`[data-ref='${mod}']`).attr("data-status", "selected");
+                            $(".ajax").html(data).attr("data-target", mod);
+
+                            // Add events to elements, since when we modify the HTML, the events get lost
+                            if (mod === "samples") {
+                                addPlayEvents();
+                            }
+                            else if (mod === "home") {
+                                fadeIn("#preload");
+
+                                $("[data-component='home'] [data-ref]").on("click", function () {
+                                    addNavEvents($(this));
+                                });
+                            }
+                        },
+                        error: function (request, error) {
+                            // console.log("Request: " + JSON.stringify(request))
+                            alert("There was an error with the server. Please try again later");
+                        }
+                    })
+                }
+            }
+        }
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            addPlayEvents();
+            $(".container").css({ opacity: 0, visibility: "visible" }).animate({ opacity: 0.9 }, 1300);
+
+            // Actions for the navbar (AJAX call for every element, except Download, or the current selected one, to avoid reloading the same part again)
+            $("[data-ref]").on("click", function () { // Selector "[data-ref]:not([data-status='selected'])" not working, so we check if it's selected later :(
+                addNavEvents($(this));
+            })
+
+            // Triggers the initial component home
+            $("[data-ref='home']").click();
+        })
+    </script>
+
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+
+    <!--Lightbox script made by https://github.com/lokesh Thanks Lokesh!-->
+
+    <noscript>Your browser does not support JavaScript!</noscript>
+
+</body>
+
+</html>
