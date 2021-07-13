@@ -15,8 +15,18 @@
 
     <style type="text/css">
         h1 {
-            font-family: Takagiwebfont;
+            font-family: Takagiwebfont2;
             font-size: 65px;
+        }
+
+        h2 {
+            font-family: Takagiwebfont2;
+            color: #fff;
+            -webkit-text-stroke: 1.7px black;
+        }
+
+        h4 {
+            font-family: Takagiwebfont2;
         }
 
         p {
@@ -54,29 +64,26 @@
             <div class="nav-container">
                 <ul class="nav">
                     <li data-ref="home" data-selectable="false" data-type="nav-name">
-                        <span class="nav-title">O Takagi VN Site</span>
+                        <span class="nav-title">
+                            <h4 style="margin-top: 0px;margin-bottom: 0px;">(Logo) Takagi-san VN</h4>
+                        </span>
                     </li>
                     <!--
                     -->
-                    <li data-ref="home"><i data-type="nav-icon" class="fas fa-home"></i><span
-                            data-type="nav-name">Home</span></li>
+                    <li data-ref="home"><i data-type="nav-icon" class="fas fa-home"></i><span data-type="nav-name">Home</span></li>
                     <!--
                     -->
-                    <li data-ref="about"><i data-type="nav-icon" class="fas fa-info-circle"></i><span
-                            data-type="nav-name">About</span></li>
+                    <li data-ref="about"><i data-type="nav-icon" class="fas fa-info-circle"></i><span data-type="nav-name">About</span></li>
                     <!--
                     -->
-                    <li data-ref="samples"><i data-type="nav-icon" class="fas fa-photo-video"></i><span
-                            data-type="nav-name">Samples</span></li>
+                    <li data-ref="samples"><i data-type="nav-icon" class="fas fa-photo-video"></i><span data-type="nav-name">Samples</span></li>
                     <!--
                     -->
-                    <li data-ref="download_page"><i data-type="nav-icon" class="fas fa-cloud-download-alt"></i><span
-                            data-type="nav-name">Download</span></li>
+                    <li data-ref="download_page"><i data-type="nav-icon" class="fas fa-cloud-download-alt"></i><span data-type="nav-name">Download</span></li>
                     <!--<a
                             href="https://github.com"></a>
                     -->
-                    <li data-ref="staff"><i data-type="nav-icon" class="fas fa-users"></i><span
-                            data-type="nav-name">Staff</span></li>
+                    <li data-ref="staff"><i data-type="nav-icon" class="fas fa-users"></i><span data-type="nav-name">Staff</span></li>
                 </ul>
             </div>
         </div>
@@ -90,7 +97,7 @@
 
         function addPlayEvents() {
             // Prevent two audio file play at the same time
-            document.addEventListener('play', function (e) {
+            document.addEventListener('play', function(e) {
                 var audios = document.getElementsByTagName('audio')
                 for (var i = 0, len = audios.length; i < len; i++) {
                     if (audios[i] != e.target) {
@@ -114,7 +121,7 @@
                     $.ajax({
                         type: 'GET',
                         url: `${mod}.html`,
-                        success: function (data) {
+                        success: function(data) {
                             $(".nav li").attr("data-status", "iddle");
                             $(`[data-ref='${mod}']`).attr("data-status", "selected");
                             $(".ajax").html(data).attr("data-target", mod);
@@ -122,16 +129,15 @@
                             // Add events to elements, since when we modify the HTML, the events get lost
                             if (mod === "samples") {
                                 addPlayEvents();
-                            }
-                            else if (mod === "home") {
+                            } else if (mod === "home") {
                                 fadeIn("#preload");
 
-                                $("[data-component='home'] [data-ref]").on("click", function () {
+                                $("[data-component='home'] [data-ref]").on("click", function() {
                                     addNavEvents($(this));
                                 });
                             }
                         },
-                        error: function (request, error) {
+                        error: function(request, error) {
                             // console.log("Request: " + JSON.stringify(request))
                             alert("There was an error with the server. Please try again later");
                         }
@@ -141,13 +147,17 @@
         }
     </script>
     <script>
-
-        $(document).ready(function () {
+        $(document).ready(function() {
             addPlayEvents();
-            $(".container").css({ opacity: 0, visibility: "visible" }).animate({ opacity: 0.9 }, 1300);
+            $(".container").css({
+                opacity: 0,
+                visibility: "visible"
+            }).animate({
+                opacity: 0.9
+            }, 1300);
 
             // Actions for the navbar (AJAX call for every element, except Download, or the current selected one, to avoid reloading the same part again)
-            $("[data-ref]").on("click", function () { // Selector "[data-ref]:not([data-status='selected'])" not working, so we check if it's selected later :(
+            $("[data-ref]").on("click", function() { // Selector "[data-ref]:not([data-status='selected'])" not working, so we check if it's selected later :(
                 addNavEvents($(this));
             })
 
