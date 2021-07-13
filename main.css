@@ -14,7 +14,7 @@ html {
 }
 
 @font-face {
-    font-family: Takagiwebfont;
+    font-family: Takagiwebfont2;
     font-weight: bold;
     src: url('Fonts/RifficFree-Bold.ttf');
 }
@@ -199,9 +199,6 @@ main .content {
     background: gray;
 }
 
-
-.Logo {}
-
 .ccbysa {
     border-width: 0;
 }
@@ -226,11 +223,11 @@ main .content {
 }
 
 .text_fade_in {
-    animation: opac 1.3s
+    animation: opac 1.1s
 }
 
 .text_fade_in_content {
-    animation: opac 1.3s
+    animation: opac 1.1s
 }
 
 @keyframes opac {
@@ -341,6 +338,7 @@ main .content {
     float: none;
     padding: 5px;
     padding-left: 20px;
+    text-indent: 20px;
     padding-top: 5px;
     list-style-type: disc;
     font-weight: bold;
@@ -420,6 +418,11 @@ button {
     text-indent: 20px;
     font-weight: bold;
     color: #000000;
+}
+
+h1 {
+    color: #fff;
+    -webkit-text-stroke: 2px black;
 }
 
 .container[data-component="staff"] #for-staff-li {
